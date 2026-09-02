@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Recommendations | ResumeAI</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#080b18,#10152b,#080b18);
+    color:white;
+    min-height:100vh;
+}
+
+nav{
+    padding:22px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#818cf8
+}
+
+nav a{
+    color:#cbd5e1;
+    text-decoration:none;
+    margin-left:22px;
+    font-size:14px;
+}
+
+.container{
+    max-width:1150px;
+    margin:50px auto;
+    padding:20px;
+}
+
+h1{
+    font-size:42px;
+    margin-bottom:10px
+}
+
+h1 span{
+    color:#818cf8;
+}
+
+.subtitle{
+    color:#9ca8bd;
+    margin-bottom:30px;
+    line-height:1.6;
+}
+
+.profile{
+    padding:20px;
+    border:1px solid rgba(255,255,255,.1);
+    background:rgba(255,255,255,.06);
+    border-radius:16px;
+    margin-bottom:25px;
+}
+
+.profile strong{
+    color:#a5b4fc;
+}
+
+.job-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.job-card{
+    padding:25px;
+    border-radius:18px;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.job-card h2{
+    margin-bottom:8px;
+}
+
+.company{
+    color:#a5b4fc;
+    margin-bottom:15px;
+}
+
+.info{
+    color:#a8b1c7;
+    line-height:1.8;
+    font-size:14px;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:15px 0;
+}
+
+.skill{
+    padding:7px 11px;
+    border-radius:15px;
+    background:rgba(99,102,241,.15);
+    color:#c7d2fe;
+    font-size:12px;
+}
+
+.match{
+    font-size:25px;
+    font-weight:bold;
+    color:#67e8f9;
+    margin:15px 0;
+}
+
+.matched{
+    color:#86efac;
+    font-size:13px;
+    margin-bottom:15px;
+}
+
+.btn{
+    display:inline-block;
+    padding:11px 18px;
+    border-radius:9px;
+    text-decoration:none;
+    background:linear-gradient(90deg,#6366f1,#2563eb);
+    color:white;
+    font-weight:bold;
+    font-size:13px;
+}
+
+
+/* Skill Gap Button */
+
+.skill-gap-button-container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:25px;
+    margin-bottom:20px;
+}
+
+.skill-gap-button{
+    width:auto;
+    min-height:44px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:10px 18px;
+
+    border-radius:9px;
+
+    text-decoration:none;
+
+    color:#ffffff;
+
+    font-size:13px;
+    font-weight:700;
+
+    text-align:center;
+
+    background:linear-gradient(
+        135deg,
+        #6366f1,
+        #7c3aed,
+        #2563eb
+    );
+
+    border:1px solid rgba(129,140,248,.65);
+
+    box-shadow:
+        0 0 15px rgba(99,102,241,.30),
+        0 0 25px rgba(124,58,237,.15);
+
+    transition:all .3s ease;
+}
+
+.skill-gap-button:hover{
+    transform:translateY(-2px);
+
+    background:linear-gradient(
+        135deg,
+        #818cf8,
+        #8b5cf6,
+        #3b82f6
+    );
+
+    box-shadow:
+        0 0 20px rgba(99,102,241,.45),
+        0 0 35px rgba(124,58,237,.25);
+}
+
+
+@media(max-width:800px){
+    .job-grid{
+        grid-template-columns:1fr
+    }
+
+    nav div:last-child{
+        display:none
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+Resume<span>AI</span>
+</div>
+
+<div>
+<a href="/analysis">Analysis</a>
+<a href="/jobs">Jobs</a>
+<a href="/skill-gap">Skill Gap</a>
+<a href="/dashboard">Dashboard</a>
+<a href="/profile">Profile</a>
+</div>
+
+</nav>
+
+
+<div class="container">
+
+<h1>
+Job <span>Recommendations</span>
+</h1>
+
+<p class="subtitle">
+Jobs are recommended based on the skills detected from your uploaded resume.
+</p>
+
+
+<div class="profile">
+
+Candidate:
+<strong>{{ candidate_name }}</strong>
+
+<br><br>
+
+Your detected skills:
+
+{% if skills %}
+
+<strong>
+{{ skills|join(", ") }}
+</strong>
+
+{% else %}
+
+<strong>No skills detected</strong>
+
+{% endif %}
+
+</div>
+
+
+<div class="job-grid">
+
+{% for job in jobs %}
+
+<div class="job-card">
+
+<h2>
+{{ job.title }}
+</h2>
+
+<div class="company">
+{{ job.company }}
+</div>
+
+<div class="info">
+
+📍 {{ job.location }}<br>
+💰 {{ job.salary }}<br>
+💼 {{ job.experience }}<br>
+📌 {{ job.type }}
+
+</div>
+
+
+<div class="match">
+{{ job.match_percentage }}% Match
+</div>
+
+
+<div class="skills">
+
+{% for skill in job.skills %}
+
+<span class="skill">
+{{ skill }}
+</span>
+
+{% endfor %}
+
+</div>
+
+
+{% if job.matched_skills %}
+
+<div class="matched">
+
+Matched Skills:
+{{ job.matched_skills|join(", ") }}
+
+</div>
+
+{% else %}
+
+<div class="matched">
+No matching skills detected.
+</div>
+
+{% endif %}
+
+
+<a
+href="{{ url_for('job_details', job_id=job.id) }}"
+class="btn">
+
+View Job Details →
+
+</a>
+
+</div>
+
+{% else %}
+
+<div class="job-card">
+
+<h2>
+No Jobs Found
+</h2>
+
+<p class="info">
+No matching jobs were found for the detected skills.
+</p>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+
+<!-- Small Center Skill Gap Button -->
+
+<div class="skill-gap-button-container">
+
+<a href="/skill-gap"
+class="skill-gap-button">
+
+🧠 View Skill Gap Analysis →
+
+</a>
+
+</div>
+
+
+</div>
+
+</body>
+</html>

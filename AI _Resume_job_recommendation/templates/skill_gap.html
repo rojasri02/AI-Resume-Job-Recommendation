@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Skill Gap | ResumeAI</title>
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:Arial;
+background:linear-gradient(135deg,#080b18,#10152b);
+color:white;
+min-height:100vh;
+}
+
+nav{
+padding:22px 7%;
+display:flex;
+justify-content:space-between;
+border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+}
+
+.logo span{color:#818cf8}
+
+nav a{
+color:#cbd5e1;
+text-decoration:none;
+margin-left:20px;
+font-size:14px;
+}
+
+.container{
+max-width:1000px;
+margin:55px auto;
+padding:20px;
+}
+
+h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+h1 span{color:#818cf8}
+
+.subtitle{
+color:#9ca8bd;
+margin-bottom:30px;
+}
+
+.card{
+padding:28px;
+margin-bottom:22px;
+border-radius:20px;
+background:rgba(255,255,255,.07);
+border:1px solid rgba(255,255,255,.1);
+}
+
+.skills{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.skill{
+padding:9px 14px;
+border-radius:20px;
+background:rgba(99,102,241,.15);
+color:#c7d2fe;
+}
+
+.missing{
+background:rgba(239,68,68,.12);
+color:#fecaca;
+border:1px solid rgba(239,68,68,.2);
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+Resume<span>AI</span>
+</div>
+
+<div>
+<a href="/analysis">Analysis</a>
+<a href="/jobs">Jobs</a>
+<a href="/dashboard">Dashboard</a>
+<a href="/profile">Profile</a>
+</div>
+
+</nav>
+
+<div class="container">
+
+<h1>
+Skill <span>Gap Analysis</span>
+</h1>
+
+<p class="subtitle">
+Skill gap calculated from {{ candidate_name }}'s uploaded resume.
+</p>
+
+<div class="card">
+
+<h2>Your Current Skills</h2>
+
+<br>
+
+<div class="skills">
+
+{% for skill in user_skills %}
+
+<span class="skill">
+✓ {{ skill }}
+</span>
+
+{% else %}
+
+<span class="skill">
+No skills detected
+</span>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Skills You May Need</h2>
+
+<br>
+
+<div class="skills">
+
+{% for skill in missing_skills %}
+
+<span class="skill missing">
++ {{ skill }}
+</span>
+
+{% else %}
+
+<span class="skill">
+No major skill gaps detected
+</span>
+
+{% endfor %}
+
+</div>
+<div class="buttons">
+
+    <a href="/dashboard" class="btn primary">
+        <style>
+.dashboard-button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 35px;
+}
+
+.dashboard-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 220px;
+    padding: 15px 30px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #6366f1, #2563eb);
+    border: 1px solid rgba(129,140,248,.4);
+    box-shadow: 0 8px 25px rgba(99,102,241,.35);
+}
+</style>
+
+<div class="dashboard-button-container">
+    <a href="/dashboard" class="dashboard-button">
+        ← Back to Dashboard
+    </a>
+</div>
+    </a>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

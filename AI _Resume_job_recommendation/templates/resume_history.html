@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Resume History | ResumeAI</title>
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:Arial;
+background:linear-gradient(135deg,#080b18,#10152b);
+color:white;
+min-height:100vh;
+}
+
+nav{
+padding:22px 7%;
+display:flex;
+justify-content:space-between;
+border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+}
+
+.logo span{color:#818cf8}
+
+nav a{
+color:#cbd5e1;
+text-decoration:none;
+margin-left:20px;
+}
+
+.container{
+max-width:900px;
+margin:60px auto;
+padding:20px;
+}
+
+.card{
+padding:30px;
+border-radius:20px;
+background:rgba(255,255,255,.07);
+border:1px solid rgba(255,255,255,.1);
+}
+
+h1{
+font-size:40px;
+margin-bottom:25px;
+}
+
+h1 span{color:#818cf8}
+
+.row{
+display:flex;
+justify-content:space-between;
+padding:16px 0;
+border-bottom:1px solid rgba(255,255,255,.08);
+gap:20px;
+}
+
+.label{
+color:#8f9bb2;
+}
+
+.value{
+font-weight:bold;
+text-align:right;
+}
+
+.skills{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin-top:10px;
+}
+
+.skill{
+padding:7px 12px;
+background:rgba(99,102,241,.15);
+border-radius:15px;
+color:#c7d2fe;
+}
+
+
+/* Saved Jobs Button */
+
+.saved-jobs-container{
+width:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+margin-top:30px;
+}
+
+.saved-jobs-button{
+display:inline-flex;
+justify-content:center;
+align-items:center;
+
+padding:10px 20px;
+
+border-radius:9px;
+
+text-decoration:none;
+
+background:linear-gradient(90deg,#6366f1,#2563eb);
+
+color:white;
+
+font-size:13px;
+font-weight:bold;
+
+border:1px solid rgba(129,140,248,.5);
+
+transition:all .3s ease;
+}
+
+.saved-jobs-button:hover{
+transform:translateY(-2px);
+
+background:linear-gradient(90deg,#818cf8,#3b82f6);
+
+box-shadow:0 0 20px rgba(99,102,241,.4);
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+Resume<span>AI</span>
+</div>
+
+<div>
+<a href="/analysis">Analysis</a>
+<a href="/dashboard">Dashboard</a>
+<a href="/profile">Profile</a>
+</div>
+
+</nav>
+
+
+<div class="container">
+
+<h1>
+Resume <span>History</span>
+</h1>
+
+
+<div class="card">
+
+<div class="row">
+
+<span class="label">Candidate</span>
+
+<span class="value">
+{{ candidate_name }}
+</span>
+
+</div>
+
+
+<div class="row">
+
+<span class="label">Uploaded Resume</span>
+
+<span class="value">
+{{ resume_filename }}
+</span>
+
+</div>
+
+
+<div class="row">
+
+<span class="label">Resume Score</span>
+
+<span class="value">
+{{ resume_score }}%
+</span>
+
+</div>
+
+
+<div class="row">
+
+<span class="label">Detected Skills</span>
+
+<span class="value">
+{{ skills|length }}
+</span>
+
+</div>
+
+
+<div>
+
+<br>
+
+<div class="label">
+Skills
+</div>
+
+
+<div class="skills">
+
+{% for skill in skills %}
+
+<span class="skill">
+{{ skill }}
+</span>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- Saved Jobs Button -->
+
+<div class="saved-jobs-container">
+
+<a href="/saved-jobs"
+class="saved-jobs-button">
+
+💼 Saved Jobs →
+
+</a>
+
+</div>
+
+
+</div>
+
+</body>
+</html>

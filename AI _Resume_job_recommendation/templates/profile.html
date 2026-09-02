@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Profile | ResumeAI</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#080b18,#10152b);
+    color:white;
+    min-height:100vh;
+}
+
+nav{
+    padding:22px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#818cf8;
+}
+
+nav a{
+    color:#cbd5e1;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#818cf8;
+}
+
+.container{
+    max-width:900px;
+    margin:50px auto;
+    padding:20px;
+}
+
+h1{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+h1 span{
+    color:#818cf8;
+}
+
+.subtitle{
+    color:#9ca8bd;
+    margin-bottom:30px;
+}
+
+.card{
+    padding:30px;
+    border-radius:20px;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.row{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    padding:18px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.label{
+    color:#8f9bb2;
+}
+
+.value{
+    font-weight:bold;
+    text-align:right;
+}
+
+.score{
+    color:#67e8f9;
+    font-size:25px;
+}
+
+.skills-title{
+    color:#8f9bb2;
+    margin-top:25px;
+    margin-bottom:15px;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.skill{
+    padding:8px 13px;
+    border-radius:16px;
+    background:rgba(99,102,241,.15);
+    color:#c7d2fe;
+    font-size:13px;
+}
+
+@media(max-width:700px){
+
+    nav{
+        padding:18px 5%;
+    }
+
+    nav a{
+        margin-left:10px;
+        font-size:12px;
+    }
+
+    .container{
+        margin:35px auto;
+    }
+
+    h1{
+        font-size:34px;
+    }
+
+    .row{
+        flex-direction:column;
+        gap:8px;
+    }
+
+    .value{
+        text-align:left;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+Resume<span>AI</span>
+</div>
+
+<div>
+
+<a href="/analysis">Analysis</a>
+<a href="/jobs">Jobs</a>
+<a href="/dashboard">Dashboard</a>
+<a href="/profile">Profile</a>
+
+</div>
+
+</nav>
+
+
+<div class="container">
+
+<h1>
+My <span>Profile</span>
+</h1>
+
+<p class="subtitle">
+Your resume information and detected skills.
+</p>
+
+
+<div class="card">
+
+
+<div class="row">
+
+<span class="label">
+Candidate
+</span>
+
+<span class="value">
+{{ candidate_name }}
+</span>
+
+</div>
+
+
+<div class="row">
+
+<span class="label">
+Resume File
+</span>
+
+<span class="value">
+{{ resume_filename }}
+</span>
+
+</div>
+
+
+<div class="row">
+
+<span class="label">
+Career Field
+</span>
+
+<span class="value">
+{{ career_field }}
+</span>
+
+</div>
+
+
+<div class="row">
+
+<span class="label">
+Education
+</span>
+
+<span class="value">
+{{ education }}
+</span>
+
+</div>
+
+
+<div class="row">
+
+<span class="label">
+Experience
+</span>
+
+<span class="value">
+{{ experience }}
+</span

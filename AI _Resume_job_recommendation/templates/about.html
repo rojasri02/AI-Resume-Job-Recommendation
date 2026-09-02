@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>About | ResumeAI</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            min-height: 100vh;
+
+            color: white;
+
+            background:
+                radial-gradient(
+                    circle at 10% 20%,
+                    rgba(99,102,241,.25),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 90% 80%,
+                    rgba(14,165,233,.20),
+                    transparent 30%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #080b18,
+                    #10152b,
+                    #080b18
+                );
+        }
+
+
+        /* NAVIGATION */
+
+        nav {
+
+            height: 75px;
+
+            padding: 0 7%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,.08);
+        }
+
+
+        .logo {
+
+            font-size: 25px;
+
+            font-weight: bold;
+        }
+
+
+        .logo span {
+
+            color: #818cf8;
+        }
+
+
+        .nav-links a {
+
+            color: #cbd5e1;
+
+            text-decoration: none;
+
+            margin-left: 28px;
+
+            font-size: 14px;
+
+            transition: .3s;
+        }
+
+
+        .nav-links a:hover {
+
+            color: #818cf8;
+        }
+
+
+        /* MAIN */
+
+        .container {
+
+            max-width: 1100px;
+
+            margin: 65px auto;
+
+            padding: 20px;
+        }
+
+
+        .tag {
+
+            display: inline-block;
+
+            padding: 9px 15px;
+
+            border-radius: 30px;
+
+            background:
+                rgba(99,102,241,.15);
+
+            border:
+                1px solid
+                rgba(129,140,248,.3);
+
+            color: #a5b4fc;
+
+            font-size: 13px;
+
+            margin-bottom: 20px;
+        }
+
+
+        h1 {
+
+            font-size: 48px;
+
+            line-height: 1.15;
+
+            margin-bottom: 20px;
+        }
+
+
+        h1 span {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #818cf8,
+                    #38bdf8
+                );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+        }
+
+
+        .intro {
+
+            color: #a8b1c7;
+
+            line-height: 1.8;
+
+            font-size: 17px;
+
+            max-width: 800px;
+
+            margin-bottom: 50px;
+        }
+
+
+        /* CARDS */
+
+        .cards {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+
+        .card {
+
+            padding: 32px;
+
+            min-height: 260px;
+
+            border-radius: 22px;
+
+            background:
+                rgba(255,255,255,.07);
+
+            border:
+                1px solid
+                rgba(255,255,255,.12);
+
+            backdrop-filter: blur(20px);
+
+            box-shadow:
+                0 20px 55px
+                rgba(0,0,0,.30);
+
+            transition: .3s;
+        }
+
+
+        .card:hover {
+
+            transform:
+                translateY(-7px);
+
+            border-color:
+                rgba(129,140,248,.55);
+        }
+
+
+        .icon {
+
+            width: 60px;
+
+            height: 60px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 16px;
+
+            background:
+                rgba(99,102,241,.15);
+
+            font-size: 30px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .card h2 {
+
+            font-size: 21px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .card p {
+
+            color: #9ca8bd;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* BUTTON */
+
+        .card-button {
+
+            display: inline-block;
+
+            padding: 12px 20px;
+
+            border-radius: 9px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #6366f1,
+                    #2563eb
+                );
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: .3s;
+        }
+
+
+        .card-button:hover {
+
+            transform:
+                translateY(-2px);
+
+            opacity: .9;
+        }
+
+
+        /* BOTTOM BUTTON */
+
+        .bottom {
+
+            text-align: center;
+
+            margin-top: 45px;
+        }
+
+
+        .bottom a {
+
+            display: inline-block;
+
+            padding: 14px 28px;
+
+            border-radius: 10px;
+
+            background:
+                rgba(255,255,255,.06);
+
+            border:
+                1px solid
+                rgba(255,255,255,.15);
+
+            color: #cbd5e1;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: bold;
+        }
+
+
+        /* MOBILE */
+
+        @media(max-width: 800px) {
+
+            .cards {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            h1 {
+
+                font-size: 38px;
+            }
+
+
+            .nav-links {
+
+                display: none;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+
+        Resume<span>AI</span>
+
+    </div>
+
+
+    <div class="nav-links">
+
+        <a href="/">
+            Home
+        </a>
+
+        <a href="/about">
+            About
+        </a>
+
+        <a href="/upload">
+            Upload Resume
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- MAIN CONTENT -->
+
+<div class="container">
+
+
+    <div class="tag">
+
+        ✦ ABOUT RESUMEAI
+
+    </div>
+
+
+    <h1>
+
+        Smarter hiring with
+        <span>Artificial Intelligence</span>
+
+    </h1>
+
+
+    <p class="intro">
+
+        ResumeAI is an AI-powered resume screening and
+        job recommendation system. It analyzes your resume,
+        identifies your skills and experience, compares
+        your profile with job requirements, and helps you
+        discover suitable career opportunities.
+
+    </p>
+
+
+
+    <!-- CARDS -->
+
+    <div class="cards">
+
+
+        <!-- 1. RESUME ANALYSIS -->
+
+        <div class="card">
+
+            <div class="icon">
+                📄
+            </div>
+
+
+            <h2>
+                Resume Analysis
+            </h2>
+
+
+            <p>
+
+                Extract important information such as
+                skills, education, experience and
+                professional profile from your resume.
+
+            </p>
+
+
+            <a href="/analysis"
+               class="card-button">
+
+                View Resume Analysis →
+
+            </a>
+
+        </div>
+
+
+
+        <!-- 2. AI SKILL MATCHING -->
+
+        <div class="card">
+
+            <div class="icon">
+                🧠
+            </div>
+
+
+            <h2>
+                AI Skill Matching
+            </h2>
+
+
+            <p>
+
+                Compare your resume skills with available
+                job requirements using AI and similarity
+                techniques.
+
+            </p>
+
+
+            <a href="/jobs"
+               class="card-button">
+
+                View Skill Matches →
+
+            </a>
+
+        </div>
+
+
+
+        <!-- 3. JOB RECOMMENDATION -->
+
+        <div class="card">
+
+            <div class="icon">
+                🎯
+            </div>
+
+
+            <h2>
+                Job Recommendation
+            </h2>
+
+
+            <p>
+
+                Get suitable job recommendations based
+                on your skills, experience and
+                career profile.
+
+            </p>
+
+
+            <a href="/jobs"
+               class="card-button">
+
+                View Recommended Jobs →
+
+            </a>
+
+        </div>
+
+
+
+        <!-- 4. SKILL GAP -->
+
+        <div class="card">
+
+            <div class="icon">
+                📊
+            </div>
+
+
+            <h2>
+                Skill Gap Analysis
+            </h2>
+
+
+            <p>
+
+                Identify missing skills and discover
+                what skills you need to learn to improve
+                your career opportunities.
+
+            </p>
+
+
+            <a href="/skill-gap"
+               class="card-button">
+
+                View Skill Gap →
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- BOTTOM -->
+
+    <div class="bottom">
+
+        <a href="/upload">
+
+            ✨ Analyze Your Resume
+
+        </a>
+
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Saved Jobs | ResumeAI</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#080b18,#10152b);
+    color:white;
+    min-height:100vh;
+}
+
+nav{
+    padding:22px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#818cf8;
+}
+
+nav a{
+    color:#cbd5e1;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:14px;
+}
+
+.container{
+    max-width:1000px;
+    margin:55px auto;
+    padding:20px;
+}
+
+h1{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+h1 span{
+    color:#818cf8;
+}
+
+.subtitle{
+    color:#9ca8bd;
+    margin-bottom:30px;
+}
+
+.job{
+    padding:25px;
+    margin-bottom:15px;
+    border-radius:18px;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.job h2{
+    margin-bottom:8px;
+}
+
+.company{
+    color:#a5b4fc;
+    margin-bottom:10px;
+}
+
+.location{
+    color:#cbd5e1;
+    margin-bottom:10px;
+}
+
+.match{
+    color:#67e8f9;
+    font-weight:bold;
+    margin:12px 0;
+}
+
+.btn{
+    display:inline-block;
+    padding:10px 16px;
+    border-radius:9px;
+    background:linear-gradient(90deg,#6366f1,#2563eb);
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:13px;
+}
+
+.profile-button-container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:35px;
+    margin-bottom:20px;
+}
+
+.profile-button{
+    display:inline-block;
+    padding:12px 30px;
+    border-radius:10px;
+    background:linear-gradient(90deg,#6366f1,#2563eb);
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:14px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+Resume<span>AI</span>
+</div>
+
+<div>
+
+<a href="/analysis">Analysis</a>
+<a href="/jobs">Jobs</a>
+<a href="/dashboard">Dashboard</a>
+<a href="/profile">Profile</a>
+
+</div>
+
+</nav>
+
+
+<div class="container">
+
+<h1>
+Saved <span>Jobs</span>
+</h1>
+
+<p class="subtitle">
+Job opportunities relevant to {{ candidate_name }}'s resume.
+</p>
+
+
+{% if jobs %}
+
+{% for job in jobs %}
+
+<div class="job">
+
+<h2>
+{{ job.title }}
+</h2>
+
+<div class="company">
+{{ job.company }}
+</div>
+
+<div class="location">
+📍 {{ job.location }}
+</div>
+
+<div class="match">
+{{ job.match_percentage }}% Resume Match
+</div>
+
+<a
+href="{{ url_for('job_details', job_id=job.id) }}"
+class="btn">
+
+View Details →
+
+</a>
+
+</div>
+
+{% endfor %}
+
+{% else %}
+
+<div class="job">
+
+<h2>No Saved Jobs</h2>
+
+<p class="subtitle">
+No matching jobs are available for your resume.
+</p>
+
+</div>
+
+{% endif %}
+
+
+<div class="profile-button-container">
+
+<a href="/profile" class="profile-button">
+View Profile
+</a>
+
+</div>
+
+
+</div>
+
+</body>
+</html>

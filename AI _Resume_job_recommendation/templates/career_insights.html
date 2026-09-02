@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Career Insights | ResumeAI</title>
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:Arial;
+background:linear-gradient(135deg,#080b18,#10152b);
+color:white;
+min-height:100vh;
+}
+
+nav{
+padding:22px 7%;
+display:flex;
+justify-content:space-between;
+border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+}
+
+.logo span{color:#818cf8}
+
+nav a{
+color:#cbd5e1;
+text-decoration:none;
+margin-left:20px;
+font-size:14px;
+}
+
+.container{
+max-width:1000px;
+margin:50px auto;
+padding:20px;
+}
+
+h1{font-size:42px}
+
+h1 span{color:#818cf8}
+
+.subtitle{
+color:#9ca8bd;
+margin:12px 0 30px;
+}
+
+.card{
+padding:28px;
+margin-bottom:20px;
+border-radius:20px;
+background:rgba(255,255,255,.07);
+border:1px solid rgba(255,255,255,.1);
+}
+
+.info{
+line-height:2;
+color:#cbd5e1;
+}
+
+.skills{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-top:15px;
+}
+
+.skill{
+padding:9px 14px;
+border-radius:20px;
+background:rgba(99,102,241,.15);
+color:#c7d2fe;
+}
+
+.job{
+padding:15px;
+margin-top:12px;
+border-radius:12px;
+background:rgba(255,255,255,.05);
+}
+
+
+/* Resume History Button */
+
+.resume-history-container{
+width:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+margin-top:30px;
+margin-bottom:20px;
+}
+
+.resume-history-button{
+display:inline-flex;
+justify-content:center;
+align-items:center;
+
+padding:10px 20px;
+
+border-radius:9px;
+
+text-decoration:none;
+
+background:linear-gradient(90deg,#6366f1,#2563eb);
+
+color:white;
+
+font-size:13px;
+font-weight:bold;
+
+border:1px solid rgba(129,140,248,.5);
+
+transition:all .3s ease;
+}
+
+.resume-history-button:hover{
+transform:translateY(-2px);
+
+background:linear-gradient(90deg,#818cf8,#3b82f6);
+
+box-shadow:0 0 20px rgba(99,102,241,.4);
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+Resume<span>AI</span>
+</div>
+
+<div>
+<a href="/analysis">Analysis</a>
+<a href="/jobs">Jobs</a>
+<a href="/dashboard">Dashboard</a>
+<a href="/profile">Profile</a>
+</div>
+
+</nav>
+
+
+<div class="container">
+
+<h1>
+Career <span>Insights</span>
+</h1>
+
+<p class="subtitle">
+Personalized insights for {{ candidate_name }}
+based on the uploaded resume.
+</p>
+
+
+<div class="card">
+
+<h2>Career Field</h2>
+
+<br>
+
+<div class="info">
+{{ career_field }}
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>Resume Score</h2>
+
+<br>
+
+<div class="info">
+{{ resume_score }}%
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>Detected Skills</h2>
+
+<div class="skills">
+
+{% for skill in skills %}
+
+<span class="skill">
+{{ skill }}
+</span>
+
+{% else %}
+
+<span class="skill">
+No skills detected
+</span>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>Suitable Career Opportunities</h2>
+
+{% for job in jobs[:6] %}
+
+<div class="job">
+
+<strong>
+{{ job.title }}
+</strong>
+
+<br><br>
+
+<span class="info">
+{{ job.company }} — {{ job.match_percentage }}% match
+</span>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+
+<!-- Resume History Button -->
+
+<div class="resume-history-container">
+
+<a href="/resume-history"
+class="resume-history-button">
+
+📄 Resume History →
+
+</a>
+
+</div>
+
+
+</div>
+
+</body>
+</html>

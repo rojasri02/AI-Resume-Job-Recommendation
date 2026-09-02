@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ResumeAI | AI Job Recommendation</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            color: white;
+
+            background:
+                radial-gradient(circle at 15% 20%, #3730a3 0%, transparent 30%),
+                radial-gradient(circle at 85% 80%, #075985 0%, transparent 30%),
+                linear-gradient(135deg, #070b18, #111827, #080b18);
+        }
+
+
+        /* NAVIGATION */
+
+        nav {
+            height: 75px;
+            padding: 0 7%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #818cf8;
+        }
+
+
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+
+            margin-left: 28px;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #818cf8;
+        }
+
+
+        /* HERO SECTION */
+
+        .hero {
+
+            max-width: 1150px;
+
+            margin: auto;
+
+            min-height: calc(100vh - 75px);
+
+            padding: 70px 25px;
+
+            display: grid;
+
+            grid-template-columns: 1.1fr 0.9fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+
+        /* TAG */
+
+        .tag {
+
+            display: inline-block;
+
+            padding: 9px 15px;
+
+            border-radius: 30px;
+
+            background: rgba(99,102,241,0.15);
+
+            border: 1px solid rgba(129,140,248,0.3);
+
+            color: #a5b4fc;
+
+            font-size: 13px;
+
+            margin-bottom: 22px;
+        }
+
+
+        /* HEADING */
+
+        h1 {
+
+            font-size: 60px;
+
+            line-height: 1.05;
+
+            margin-bottom: 25px;
+        }
+
+        h1 span {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #818cf8,
+                    #38bdf8
+                );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+        }
+
+
+        /* DESCRIPTION */
+
+        .description {
+
+            color: #a8b1c7;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+
+            max-width: 600px;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* BUTTONS */
+
+        .buttons {
+
+            display: flex;
+
+            gap: 15px;
+        }
+
+
+        .btn {
+
+            text-decoration: none;
+
+            padding: 14px 23px;
+
+            border-radius: 10px;
+
+            font-weight: bold;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+
+        .primary {
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #6366f1,
+                    #3b82f6
+                );
+        }
+
+
+        .primary:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 10px 30px
+                rgba(99,102,241,0.35);
+        }
+
+
+        .secondary {
+
+            color: #cbd5e1;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.15);
+
+            background:
+                rgba(255,255,255,0.05);
+        }
+
+
+        .secondary:hover {
+
+            background:
+                rgba(255,255,255,0.10);
+
+            color: white;
+        }
+
+
+        /* AI CARD */
+
+        .card {
+
+            padding: 35px;
+
+            border-radius: 25px;
+
+            background:
+                rgba(255,255,255,0.07);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            backdrop-filter: blur(20px);
+
+            box-shadow:
+                0 25px 70px
+                rgba(0,0,0,0.4);
+        }
+
+
+        .card-top {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .ai-icon {
+
+            width: 55px;
+
+            height: 55px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 15px;
+
+            font-size: 28px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #6366f1,
+                    #2563eb
+                );
+
+            box-shadow:
+                0 10px 30px
+                rgba(99,102,241,0.3);
+        }
+
+
+        .card h2 {
+
+            font-size: 24px;
+
+            margin-bottom: 6px;
+        }
+
+
+        .card-subtitle {
+
+            color: #8f9bb2;
+
+            font-size: 13px;
+        }
+
+
+        /* AI PROCESS */
+
+        .process {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 15px;
+
+            margin-top: 20px;
+        }
+
+
+        .process-item {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            padding: 16px;
+
+            border-radius: 14px;
+
+            background:
+                rgba(255,255,255,0.05);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            transition: 0.3s;
+        }
+
+
+        .process-item:hover {
+
+            transform: translateX(5px);
+
+            background:
+                rgba(99,102,241,0.10);
+        }
+
+
+        .process-icon {
+
+            width: 40px;
+
+            height: 40px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 10px;
+
+            background:
+                rgba(99,102,241,0.15);
+
+            font-size: 20px;
+        }
+
+
+        .process-text h3 {
+
+            font-size: 14px;
+
+            margin-bottom: 4px;
+        }
+
+
+        .process-text p {
+
+            color: #8f9bb2;
+
+            font-size: 12px;
+        }
+
+
+        /* AI STATUS */
+
+        .ai-status {
+
+            margin-top: 25px;
+
+            padding: 15px;
+
+            border-radius: 12px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            background:
+                rgba(34,197,94,0.08);
+
+            border:
+                1px solid
+                rgba(34,197,94,0.18);
+        }
+
+
+        .status-left {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+        }
+
+
+        .status-dot {
+
+            width: 9px;
+
+            height: 9px;
+
+            border-radius: 50%;
+
+            background: #22c55e;
+
+            box-shadow:
+                0 0 10px
+                rgba(34,197,94,0.7);
+        }
+
+
+        .status-text {
+
+            font-size: 13px;
+
+            color: #bbf7d0;
+        }
+
+
+        .status-badge {
+
+            color: #86efac;
+
+            font-size: 12px;
+
+            font-weight: bold;
+        }
+
+
+        /* FEATURES */
+
+        .features {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap: 15px;
+
+            margin-top: 25px;
+        }
+
+
+        .feature {
+
+            padding: 15px;
+
+            text-align: center;
+
+            border-radius: 12px;
+
+            background:
+                rgba(255,255,255,0.04);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.07);
+        }
+
+
+        .feature-icon {
+
+            font-size: 22px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .feature p {
+
+            color: #9ca8bd;
+
+            font-size: 11px;
+        }
+
+
+        /* RESPONSIVE */
+
+        @media (max-width: 850px) {
+
+            .hero {
+
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+            }
+
+
+            h1 {
+
+                font-size: 45px;
+            }
+
+
+            .nav-links {
+
+                display: none;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            .features {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .buttons {
+
+                flex-direction: column;
+            }
+
+
+            .btn {
+
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <div class="logo">
+            Resume<span>AI</span>
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="/about">
+                About
+            </a>
+
+            <a href="/upload">
+                Upload Resume
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+
+        <!-- LEFT SIDE -->
+
+        <div>
+
+            <div class="tag">
+                ✦ AI-Powered Resume Screening
+            </div>
+
+
+            <h1>
+
+                Find your next
+
+                <span>
+                    career opportunity.
+                </span>
+
+            </h1>
+
+
+            <p class="description">
+
+                Upload your resume and let our AI analyze
+                your skills, experience and profile to discover
+                the jobs that match you best.
+
+            </p>
+
+
+            <div class="buttons">
+
+                <a
+                    href="/upload"
+                    class="btn primary">
+
+                    Get Started →
+
+                </a>
+
+
+                <a
+                    href="/about"
+                    class="btn secondary">
+
+                    How It Works
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RIGHT SIDE AI CARD -->
+
+        <div class="card">
+
+
+            <div class="card-top">
+
+                <div class="ai-icon">
+                    🤖
+                </div>
+
+
+                <div>
+
+                    <h2>
+                        ResumeAI
+                    </h2>
+
+                    <div class="card-subtitle">
+                        Intelligent Career Assistant
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PROCESS -->
+
+            <div class="process">
+
+
+                <div class="process-item">
+
+                    <div class="process-icon">
+                        📄
+                    </div>
+
+                    <div class="process-text">
+
+                        <h3>
+                            Resume Analysis
+                        </h3>
+
+                        <p>
+                            Extract skills and experience
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="process-item">
+
+                    <div class="process-icon">
+                        🧠
+                    </div>
+
+                    <div class="process-text">
+
+                        <h3>
+                            AI Skill Matching
+                        </h3>
+
+                        <p>
+                            Compare your profile with jobs
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="process-item">
+
+                    <div class="process-icon">
+                        🎯
+                    </div>
+
+                    <div class="process-text">
+
+                        <h3>
+                            Job Recommendations
+                        </h3>
+
+                        <p>
+                            Find jobs that match your skills
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="process-item">
+
+                    <div class="process-icon">
+                        📊
+                    </div>
+
+                    <div class="process-text">
+
+                        <h3>
+                            Skill Gap Analysis
+                        </h3>
+
+                        <p>
+                            Discover skills you need to improve
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STATUS -->
+
+            <div class="ai-status">
+
+                <div class="status-left">
+
+                    <div class="status-dot"></div>
+
+                    <div class="status-text">
+                        AI Recommendation Engine
+                    </div>
+
+                </div>
+
+
+                <div class="status-badge">
+                    READY
+                </div>
+
+            </div>
+
+
+
+            <!-- FEATURES -->
+
+            <div class="features">
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        ⚡
+                    </div>
+
+                    <p>
+                        Fast Analysis
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        🎯
+                    </div>
+
+                    <p>
+                        Smart Matching
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        📈
+                    </div>
+
+                    <p>
+                        Career Insights
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+</body>
+</html>

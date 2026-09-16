@@ -339,6 +339,7 @@ Profile| Display analyzed candidate profile
 
 "Resume Analysis" (screensho
 
+
 📈 Dashboard
 
 "Dashboard" (screenshots/dashboard.png)

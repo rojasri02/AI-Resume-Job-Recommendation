@@ -382,7 +382,7 @@ Profile| Display analyzed candidate profile
 
 Watch the complete project demonstration:
 
-"▶️ Watch AI Resume Job Recommendation System Demo" (YOUR_YOUTUBE_DEMO_LINK)
+"▶️ Watch AI Resume Job Recommendation System Demo" (https://github.com/rojasri02/AI-Resume-Job-Recommendation/blob/main/AI-Resume-Job-Recommendation-Demo.mp4-compressed%20(1).mp4)
 
 ---
 

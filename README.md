@@ -326,6 +326,9 @@ Profile| Display analyzed candidate profile
 ---
 
 📸 Screenshots
+### Home Page
+
+![Home Page](./screenshots/01-home.png)
 
 🏠 Home Page
 

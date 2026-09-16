@@ -337,36 +337,44 @@ Profile| Display analyzed candidate profile
 
 📊 Resume Analysis
 
-"Resume Analysis" (screensho
-
-
-📈 Dashboard
-
-"Dashboard" (screenshots/dashboard.png)
+"Resume Analysis" (https://github.com/rojasri02/AI-Resume-Job-Recommendation/blob/main/Ai%20resume%20screenshots/Resume%20Analysis%203.png)
 
 💼 Job Recommendations
 
-"Job Recommendations" (screenshots/jobs.png)
+"Job Recommendations" (https://github.com/rojasri02/AI-Resume-Job-Recommendation/blob/main/Ai%20resume%20screenshots/Job%20recommendations%204.png)
 
-🔎 Job Details
+💼 Job Recommendations
 
-"Job Details" (screenshots/job_details.png)
+"Job Recommendations" (https://github.com/rojasri02/AI-Resume-Job-Recommendation/blob/main/Ai%20resume%20screenshots/Job%20recommendations%205.png)
 
 🎯 Skill Gap Analysis
 
-"Skill Gap Analysis" (screenshots/skill_gap.png)
+"Skill Gap Analysis" (https://github.com/rojasri02/AI-Resume-Job-Recommendation/blob/main/Ai%20resume%20screenshots/Skill%20Gap%20analysis%206.png)
+
+📊 Dashboard
+
+"Dashboard" (https://github.com/rojasri02/AI-Resume-Job-Recommendation/blob/main/Ai%20resume%20screenshots/Dashboard%207.png)
 
 💡 Career Insights
 
-"Career Insights" (screenshots/career_insights.png)
+"Career Insights" (https://github.com/rojasri02/AI-Resume-Job-Recommendation/blob/main/Ai%20resume%20screenshots/carrer%20insights%208.png)
 
 🗂️ Resume History
 
-"Resume History" (screenshots/resume_history.png)
+"Resume History" (https://github.com/rojasri02/AI-Resume-Job-Recommendation/blob/main/Ai%20resume%20screenshots/Resume%20history%209.png)
 
-👤 Candidate Profile
+💾 Saved Jobs
 
-"Profile" (screenshots/profile.png)
+"Saved jobs" (https://github.com/rojasri02/AI-Resume-Job-Recommendation/blob/main/Ai%20resume%20screenshots/Saved%20jobs%2010.png)
+
+💾 Saved Jobs
+
+"Saved Jobs" (https://github.com/rojasri02/AI-Resume-Job-Recommendation/blob/main/Ai%20resume%20screenshots/saved%20jobs%2011.png)
+
+👤 Profile
+
+"Profile" (https://github.com/rojasri02/AI-Resume-Job-Recommendation/blob/main/Ai%20resume%20screenshots/profile%2012.png)
+
 
 ---
 

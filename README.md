@@ -333,11 +333,11 @@ Profile| Display analyzed candidate profile
 
 📄 Resume Upload
 
-"Resume Upload" (screenshots/upload.png)
+"Resume Upload" (https://github.com/rojasri02/AI-Resume-Job-Recommendation/blob/main/Ai%20resume%20screenshots/Resume%20Upload%202.png)
 
 📊 Resume Analysis
 
-"Resume Analysis" (screenshots/analysis.png)
+"Resume Analysis" (screensho
 
 📈 Dashboard
 

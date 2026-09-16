@@ -329,7 +329,7 @@ Profile| Display analyzed candidate profile
 
 🏠 Home Page
 
-"Home Page" (Ai resume screenshots/home 1.png)
+"Home Page" (https://github.com/rojasri02/AI-Resume-Job-Recommendation/blob/main/Ai%20resume%20screenshots/home%201.png)
 
 📄 Resume Upload
 

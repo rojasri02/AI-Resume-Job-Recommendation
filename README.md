@@ -329,7 +329,7 @@ Profile| Display analyzed candidate profile
 
 🏠 Home Page
 
-"Home Page" (screenshots/home.png)
+"Home Page" (Ai resume screenshots/home 1.png)
 
 📄 Resume Upload
 

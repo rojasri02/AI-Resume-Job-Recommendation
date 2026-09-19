@@ -390,7 +390,7 @@ Watch the complete project demonstration:
 
 The complete project documentation is available here:
 
-📘 AI Resume Job Recommendation – 
+📘 AI Resume Job Recommendation – (AI_Resume_Job_Recommendation_Project_Report(1).pdf)
 
 The report contains:
 

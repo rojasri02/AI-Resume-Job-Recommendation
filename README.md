@@ -420,7 +420,7 @@ The report contains:
 
 The research paper for this project is available here:
 
-📄 AI Resume Job Recommendation – Research Paper
+📄 AI Resume Job Recommendation – (https://drive.google.com/file/d/1ftYlG5rgrVqxxuzDD_QaJs7tuup7gYGf/view?usp=sharing)
 
 The paper discusses:
 

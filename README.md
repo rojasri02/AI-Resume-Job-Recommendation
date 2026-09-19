@@ -386,6 +386,56 @@ Watch the complete project demonstration:
 
 ---
 
+📑 Project Report
+
+The complete project documentation is available here:
+
+📘 AI Resume Job Recommendation – 
+
+The report contains:
+
+Abstract
+Introduction
+Problem Statement
+Objectives
+Existing System
+Proposed System
+System Requirements
+Technologies Used
+System Architecture
+Modules
+Dataset Description
+Methodology
+Implementation
+Results
+Advantages
+Limitations
+Future Enhancements
+Conclusion
+References
+
+---
+
+📑 Research Paper
+
+The research paper for this project is available here:
+
+📄 AI Resume Job Recommendation – Research Paper
+
+The paper discusses:
+
+🔬 Problem definition
+🧠 Proposed methodology
+🤖 NLP-based recommendation
+📊 Dataset
+⚙️ System architecture
+🎯 Recommendation process
+📈 Output discussion
+⚠️ Limitations
+🚀 Future enhancements
+
+---
+
 🖼️ Project Poster
 
 "Project Poster" (assets/project-poster.png)

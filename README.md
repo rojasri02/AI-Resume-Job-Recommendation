@@ -390,29 +390,29 @@ Watch the complete project demonstration:
 
 The complete project documentation is available here:
 
-📘 AI Resume Job Recommendation – (AI_Resume_Job_Recommendation_Project_Report(1).pdf)
+📘 AI Resume Job Recommendation – (https://drive.google.com/file/d/17y56yniec7jWlnGDrnTNbzMB9oGxlqK0/view?usp=sharing)
 
 The report contains:
 
-Abstract
-Introduction
-Problem Statement
-Objectives
-Existing System
-Proposed System
-System Requirements
-Technologies Used
-System Architecture
-Modules
-Dataset Description
-Methodology
-Implementation
-Results
-Advantages
-Limitations
-Future Enhancements
-Conclusion
-References
+1.Abstract
+2.Introduction
+3.Problem Statement
+4.Objectives
+5.Existing System
+6.Proposed System
+7.System Requirements
+8.Technologies Used
+9.System Architecture
+10.Modules
+11.Dataset Description
+12.Methodology
+13.Implementation
+14.Results
+15.Advantages
+16.Limitations
+17.Future Enhancements
+18.Conclusion
+19.References
 
 ---
 
